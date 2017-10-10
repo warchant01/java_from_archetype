@@ -2,6 +2,7 @@ package com.techelevator;
 
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
@@ -92,7 +93,7 @@ public class Lecture {
 		
 		for(int i = 0; i < names.size(); i++) {
 			System.out.println(names.get(i));
-		}
+		}			
 		
 		
 		System.out.println("####################");
@@ -116,7 +117,20 @@ public class Lecture {
 			System.out.println(names.get(i));
 		}
 	
+
+		System.out.println("####################");
+		System.out.println("       FOREACH");
+		System.out.println("####################");
+		System.out.println();
 		
+		for(Iterator<String> i = names.iterator(); i.hasNext(); ){
+			String nextName = i.next();
+			System.out.println(nextName);
+		}
+		for (String nextName : names){
+			System.out.println(nextName);
+		}
+
 		System.out.println("####################");
 		System.out.println("       SETS");
 		System.out.println("####################");
