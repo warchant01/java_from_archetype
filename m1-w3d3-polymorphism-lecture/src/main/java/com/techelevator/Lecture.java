@@ -10,7 +10,7 @@ public class Lecture {
 		
 		/* You cannot create an instance of an interface type */
 		
-		//Animal animal = new Animal();  // this causes a compiler error
+		// Animal animal = new Animal();  // this causes a compiler error
 		
 		/* A child-type instance may be assigned to a parent-type reference.
 		 * In this case, a Cow "is-a" Animal since Cow implements Animal.  
