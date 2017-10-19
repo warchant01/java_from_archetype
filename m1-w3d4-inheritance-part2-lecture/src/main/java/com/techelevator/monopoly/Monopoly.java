@@ -13,7 +13,7 @@ public class Monopoly extends Game {
 	private Random random;
 	
 	public Monopoly(int numberOfPlayers) {
-		super(numberOfPlayers);
+		super(numberOfPlayers, "Monopoly");
 		players = new ArrayList<>();
 		random = new Random();
 	}
