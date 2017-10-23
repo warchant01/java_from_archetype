@@ -13,7 +13,7 @@ public class Monopoly extends Game {
 	private Random random;
 	
 	public Monopoly(int numberOfPlayers) {
-		super(numberOfPlayers);
+		super(numberOfPlayers);  // Calls superclass(Game) constructor
 		players = new ArrayList<>();
 		random = new Random();
 	}
@@ -30,10 +30,10 @@ public class Monopoly extends Game {
 
 	@Override
 	protected void takeTurn(int player) {
-		Player currentPlayer = players.get(player-1);
+		Player currentPlayer = players.get(player-1); // Indexed (player 1 is really player 0)
 		if(!currentPlayer.isBankrupt()) {
 			System.out.println(currentPlayer.getPlayingPiece()+" is taking a turn.");
-			if(random.nextInt(4) % 3 == 0) {
+			if(random.nextInt(4) % 3 == 0) {  // 1 in 3 chance of player going bankrupt (using random number generator)
 				System.out.println(currentPlayer+" IS BANKRUPT!!!");
 				currentPlayer.goBankrupt();
 			}
@@ -47,7 +47,7 @@ public class Monopoly extends Game {
 
 	@Override
 	protected void finishGame() {
-		Player winner = getActivePlayers().get(0);
+		Player winner = getActivePlayers().get(0);  //First element of active player list when list size is 1 is the winner
 		System.out.println("* ~ * ~ * ~ * ~ * ~ * ~ * ~ * ~ ");
 		System.out.println(winner.getPlayingPiece() + " IS THE WINNER!!!");
 		System.out.println("* ~ * ~ * ~ * ~ * ~ * ~ * ~ * ~ ");
@@ -56,7 +56,7 @@ public class Monopoly extends Game {
 	private List<Player> getActivePlayers() {
 		List<Player> activePlayers = new ArrayList<>();
 		for(Player p : players) {
-			if(!p.isBankrupt()) {
+			if(!p.isBankrupt()) {  //Filters all non bankrupt players into active players
 				activePlayers.add(p);
 			}
 		}
