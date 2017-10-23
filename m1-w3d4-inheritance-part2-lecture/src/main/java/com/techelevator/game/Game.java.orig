@@ -18,8 +18,12 @@ public abstract class Game {
 	
 	protected abstract void finishGame();
 	
+<<<<<<< HEAD
 	public final void playGame() {  //Note this is final, so subclasses cannot change this method
+=======
+	public final void playGame() {
 		System.out.println("Welcome to "+nameOfGame+"!");
+>>>>>>> ef388c0393a71e341cc35f2c2f22dc3209f9ff4f
 		setup(numberOfPlayers);
 		for(int i = 0; !isGameOver(); i = (i+1) % numberOfPlayers) {
 			takeTurn(i+1);
