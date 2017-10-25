@@ -39,6 +39,7 @@ public class RTNValidator {
 		String path = userInput.nextLine();
 		
 		File inputFile = new File(path);
+
 		if(inputFile.exists() == false) { // checks for the existence of a file
 			System.out.println(path+" does not exist");
 			System.exit(1); // Ends the program
