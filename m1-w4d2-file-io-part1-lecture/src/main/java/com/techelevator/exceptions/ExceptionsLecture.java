@@ -24,6 +24,7 @@ public class ExceptionsLecture {
 		} catch(ArrayIndexOutOfBoundsException e) {
 			// Flow of control resumes here after the Exception is thrown
 			System.out.println("XXX   Uh-oh, something went wrong...   XXX");
+			e.printStackTrace();
 		}
 		
 		System.out.println();
@@ -35,6 +36,7 @@ public class ExceptionsLecture {
 			System.out.println("See, I told you nothing would go wrong!");
 		} catch(ArrayIndexOutOfBoundsException e) {  
 			System.out.println("Call the Darwin Awards...");
+			e.printStackTrace();
 		}
 		
 		System.out.println();
