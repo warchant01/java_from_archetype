@@ -47,23 +47,24 @@ public class SpringJDBCExample {
 		
 		dvdstoreJdbcTemplate.update(sqlCreateActor, 1000, "Craig", "Castelaz");
 		
+		String sqlDeleteActor = "DELETE FROM actor WHERE actor_id = ?";
+		dvdstoreJdbcTemplate.update(sqlDeleteActor, 1000);
+		
 		/* The next example makes use of the world database, so we need a new 
 		 * DataSource for creating connections to that database. */
-		BasicDataSource worldDataSource = new BasicDataSource();
+/*		BasicDataSource worldDataSource = new BasicDataSource();
 		worldDataSource.setUrl("jdbc:postgresql://localhost:5432/world");
 		worldDataSource.setUsername("postgres");
 		worldDataSource.setPassword("postgres1");
 		
-		/* The JdbcTemplate is the main interface we use to interact with databases using
-		 * Spring JDBC. */
-		JdbcTemplate worldJdbcTemplate = new JdbcTemplate(worldDataSource);
+		JdbcTemplate worldJdbcTemplate = new JdbcTemplate(worldDataSource);*/
 		
 		/*
 		 * Sequences are often used to generate a unique Id value prior to inserting
 		 * a new record.
 		 */
-		String sqlGetNextId = "SELECT nextval('seq_city_id')";
-		results = worldJdbcTemplate.queryForRowSet(sqlGetNextId);
+		String sqlGetNextId = "SELECT nextval('city_city_id_seq')";
+		results = dvdstoreJdbcTemplate.queryForRowSet(sqlGetNextId);
 		results.next(); // advances to the first row
 		int id = results.getInt(1); // returns the integer value of the first column (i.e. index 1)
 		System.out.println("New city id: "+id);
@@ -71,9 +72,12 @@ public class SpringJDBCExample {
 		/*
 		 * Now create a new city record using the generated id 
 		 */
-		String sqlCreateNewCity = "INSERT INTO city(id, name, countrycode, district, population) "+
-								  "VALUES(?, ?, ?, ?, ?)";
+		String sqlCreateNewCity = "INSERT INTO city(city_id, city, country_id) "+
+								  "VALUES(?, ?, ?)";
 		
-		worldJdbcTemplate.update(sqlCreateNewCity, id, "Smallville", "USA", "Kansas", 45001);
+		dvdstoreJdbcTemplate.update(sqlCreateNewCity, id, "Cincinnati",  103);
+		
+		String sqlDeleteCity = "DELETE FROM city WHERE city = 'Cincinnati'";
+		dvdstoreJdbcTemplate.update(sqlDeleteCity);
 	}
 }
