@@ -19,7 +19,7 @@
 
 <div id="content">
 
-<c:url value="/aboutUs.jsp" var="aboutUsURL" />    
+<c:url value="/aboutUs" var="aboutUsURL" />    
     <nav>
     		<ul>
     			<li><a href="${homePageURL}">Home</a></li>

@@ -30,8 +30,9 @@
 		</ul>
 		
 		<h3>Solar System Talk</h3>
+		<c:url var="forumHref" value="/forum" />
 		<p>Join a conversation with your fellow Solar System residents 
-		      on the <a href="forum/index.jsp">Solar System Geek Forum</a>!</p>
+		      on the <a href="${forumHref}">Solar System Geek Forum</a>!</p>
 	</div>
 
 	<div class="planet">
