@@ -9,7 +9,7 @@ public class AlienWeightCalculator {
 		if (planet < 0 || planet > 7) {
 			return 0;
 		} else {
-			return (int)gravities[planet]*earthWeight;
+			return (int)(gravities[planet]*earthWeight);
 		}
 	}
 }
