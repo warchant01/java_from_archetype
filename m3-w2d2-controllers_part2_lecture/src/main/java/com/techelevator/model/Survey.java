@@ -7,7 +7,14 @@ public class Survey {
 	private String petPreference;
 	private String emailAddress;
 	private String language;
+	private String highSchool;
 	
+	public String getHighSchool() {
+		return highSchool;
+	}
+	public void setHighSchool(String highSchool) {
+		this.highSchool = highSchool;
+	}
 	public String getColor() {
 		return color;
 	}
