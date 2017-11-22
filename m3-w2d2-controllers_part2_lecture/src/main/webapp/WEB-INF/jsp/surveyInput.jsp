@@ -30,6 +30,10 @@
 					<label for="language">Do you prefer C# or Java?</label>
 					<input type="text" name="language" id="language" />
 				</div>
+				<div class="formGroup">		
+					<label for="highSchool">Where did you go to high school?</label>
+					<input type="text" name="highSchool" id="highSchool" />
+				</div>
 				<div class="formGroup">
 					<input type="submit" value="Speak Your Mind" />
 				</div>		
